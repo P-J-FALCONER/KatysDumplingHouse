@@ -8,59 +8,70 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+    integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
+    integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
+    crossorigin=""></script>
+    <style>
+    #mapid { height: 30em; }
+    </style>
   </head>
   <body>
     <div class="container">
-      <!-- Dropdown Structure -->
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">Oak Park</a></li>
-        <li><a href="#!">Westmont</a></li>
-      </ul>
       <nav>
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#!" class="brand-logo">Katy's Dumpling House</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#about">About Us</a></li>
             <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#locations">Locations</a></li>
-            <li><a href="">Order Now</a></li>
-            <!-- Dropdown Trigger -->
-            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menus<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#">Order Now</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#">Order Now</a></li>
           </ul>
         </div>
       </nav>
       <div class="row" id="aboutus">
         <h3 class="center">About Us</h3>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
       </div>
       <div class="row" id="reviews">
         <h3 class="center">Reviews</h3>
       </div>
-      <div class="row" id="locations">
-        <h3 class="center">Locations</h3>
+      <div class="row" id="location">
+        <h3 class="center">Location</h3>
         <div class="row">
-          <div class="s12 m12 l6">
-            <h5>Oak Park Location</h5>
-            <p>665 N. Cass Ave.</p>
-            <p>Westmont, IL 60559</p>
-          </div>
-          <div class="s12 m12 l6">
+          <div class="col s12 m6 l6">
             <h5>Westmont Location</h5>
-            <p>1113 Lake Street</p>
-            <p>Oak Park, IL 60301</p>
+            <p>665 N Cass Ave</p>
+            <p> Westmont, IL 60559</p>
+            <p>Phone: <a href="tel:630-323-9393">630-323-9393</a></p>
+          </div>
+          <div class="col s12 m6 l6" id="mapid">
+
           </div>
         </div>
       </div>
-      <div class="row">
-        <h3 class="center">Menus</h3>
+      <div class="row" id="menu">
+        <h3 class="center">Menu</h3>
         <div class="col s12">
           <ul class="tabs">
-            <li class="tab col s6"><a href="#oakparkmenu">Oak Park Menu</a></li>
-            <li class="tab col s6"><a href="#westmontmenu">Westmont Menu</a></li>
+            <li class="tab col s4"><a href="#lunch">Lunch</a></li>
+            <li class="tab col s4"><a href="#dinner">Dinner</a></li>
+            <li class="tab col s4"><a href="#dessert">Dessert</a></li>
           </ul>
         </div>
-        <div id="oakparkmenu" class="row">
+        <div id="lunch" class="row">
           <div class="row">
-            <h5 class="center">Lunch</h5>
             <div class="col s6 m6">
               <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
@@ -81,7 +92,6 @@
             </div>
           </div>
           <div class="row">
-            <h5 class="center">Dinner</h5>
             <div class="col s6 m6">
               <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
@@ -102,9 +112,8 @@
             </div>
           </div>
         </div>
-        <div id="westmontmenu" class="row">
+        <div id="dinner" class="row">
           <div class="row">
-            <h5 class="center">Lunch</h5>
             <div class="col s6 m6">
               <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
@@ -125,7 +134,6 @@
             </div>
           </div>
           <div class="row">
-            <h5 class="center">Dinner</h5>
             <div class="col s6 m6">
               <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
@@ -140,6 +148,48 @@
                 <div class="card-content white-text">
                   <span class="card-title">Great Food</span>
                   <span>$8.95</span>
+                  <p>Food food food food food food food</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="dessert" class="row">
+          <div class="row">
+            <div class="col s6 m6">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Great Food</span>
+                  <span>$7.95</span>
+                  <p>Food food food food food food food</p>
+                </div>
+              </div>
+            </div>
+            <div class="col s6 m6">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Great Food</span>
+                  <span>$7.95</span>
+                  <p>Food food food food food food food</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s6 m6">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Great Food</span>
+                  <span>$7.95</span>
+                  <p>Food food food food food food food</p>
+                </div>
+              </div>
+            </div>
+            <div class="col s6 m6">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">Great Food</span>
+                  <span>$7.95</span>
                   <p>Food food food food food food food</p>
                 </div>
               </div>
@@ -150,28 +200,50 @@
       <footer class="page-footer">
         <div class="container">
           <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Footer Content</h5>
-              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
+          <div class="col s6 m6 l6">
+            <h5 class="white-text">Address</h5>
+            <p class="white-text">665 N Cass Ave</p>
+            <p class="white-text"> Westmont, IL 60559</p>
+            <p class="white-text">Phone: <a href="tel:630-323-9393">630-323-9393</a></p>
+          </div>
+            <div class="col l4 offset-l2 s6">
               <h5 class="white-text">Links</h5>
               <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                <li><a href="#about" class="white-text">About Us</a></li>
+                <li><a href="#reviews" class="white-text">Reviews</a></li>
+                <li><a href="#location" class="white-text">Location</a></li>
+                <li><a href="#menu" class="white-text">Menu</a></li>
+                <li><a href="#" class="white-text">Order Now</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div class="footer-copyright">
           <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          Designed by <a href="patrickfalconer.com" class="white-text">Patrick Falconer</a>
           </div>
         </div>
       </footer>
     </div>
   </body>
+  <script>
+      $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+      })
+      var mymap = L.map('mapid').setView([41.812431, -87.974784], 16);
+
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          maxZoom: 18,
+          id: 'mapbox.streets',
+          accessToken: 'pk.eyJ1IjoiZmFsY29uMjIiLCJhIjoiY2oxenl3bHlwMDNueDJ3cDg5b3NwOW1qNCJ9.nFAkSZ3PJuJNQtKYNt6aHQ'
+      }).addTo(mymap);
+      var marker = L.marker([41.812431, -87.974784]).addTo(mymap);
+      $('a').click(function(){
+        $('html, body').animate({
+            scrollTop: $( $(this).attr('href') ).offset().top
+        }, 900);
+        return false;
+      });
+    </script>
 </html>
