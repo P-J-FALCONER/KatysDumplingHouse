@@ -49,14 +49,13 @@
     }
   </style>
 </head>
-<img src="" alt="">
 <body>
   <nav>
     <div class="nav-wrapper grey lighten-1">
       <a href="#!" class="brand-logo black-text"><h4>Katy's Dumplings</h4><i class="material-icons large hide-on-med-and-up">call</i></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="waves-effect waves-light btn-large red lighten-1" href="https://www.chownow.com/"><i class="material-icons right">local_dining</i>Order Now!</a></li>
+        <li><a class="waves-effect waves-light btn-large red lighten-1" href="#ordermodal"><i class="material-icons right">local_dining</i>Order Now!</a></li>
         <li><a href="#menu">Menu</a></li>
         <li class="left-nav"><a href="#location">Location / Hours</a></li>
       </ul>
@@ -68,6 +67,15 @@
       </ul>
     </div>
   </nav>
+  <div id="ordermodal" class="modal">
+    <div class="modal-content">
+      <h4>Online Ordering Coming in September 2017</h4>
+      <p>Until Then Please call us at <a href="tel:630-323-9393">630-323-9393</a> to order</p>
+    </div>
+    <div class="modal-footer">
+      <a href="tel:630-323-9393" class="modal-action modal-close waves-effect waves-green btn-flat">Call</a>
+    </div>
+  </div>
   <div class="parallax-container">
     <div class="parallax"><img class="responsive-img" src="images/store.jpg"></div>
   </div>
@@ -79,15 +87,7 @@
             <h4>About Us</h4>
           </div>
           <div class="collapsible-body">
-            <p>Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to
-              emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool
-              for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or
-              layout. Lorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero. Its words
-              and letters have been changed by addition or removal, so to deliberately render its content nonsensical; it's
-              not genuine, correct, or comprehensible Latin anymore. While lorem ipsum's still resembles classical Latin,
-              it actually has no meaning whatsoever. As Cicero's text doesn't contain the letters K, W, or Z, alien to latin,
-              these, and others are often inserted randomly to mimic the typographic appearence of European languages, as
-              are digraphs not to be found in the original.</p>
+            <p>Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool</p>
           </div>
         </li>
         <li>
@@ -429,37 +429,6 @@
   <div class="parallax-container">
     <div class="parallax"><img class="responsive-img" src="images/soup.jpg"></div>
   </div>
-  <div class="section white" id="gallery">
-    <div class="row container">
-      <h2 class="header">Gallery of Food Images</h2>
-      <div class="carousel carousel-slider center" data-indicators="true">
-        <div class="carousel-item red white-text" href="#one!">
-          <img class="responsive-img" src="images/soup2.jpg">
-        </div>
-        <div class="carousel-item amber white-text" href="#two!">
-          <img class="responsive-img" src="images/soup3.jpg">
-        </div>
-        <div class="carousel-item green white-text" href="#three!">
-          <img class="responsive-img" src="images/food.jpg">
-        </div>
-        <div class="carousel-item blue white-text" href="#four!">
-          <img class="responsive-img" src="images/food2.jpg">
-        </div>
-        <div class="carousel-item blue white-text" href="#four!">
-          <img class="responsive-img" src="images/bao.jpg">
-        </div>
-        <div class="carousel-item blue white-text" href="#four!">
-          <img class="responsive-img" src="images/soup.jpg">
-        </div>
-        <div class="carousel-item blue white-text" href="#four!">
-          <img class="responsive-img" src="images/noodles.jpg">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="parallax-container">
-    <div class="parallax"><img class="responsive-img" src="images/noodles.jpg"></div>
-  </div>
   <div class="section white">
     <div class="row">
       <div class="row" id="location">
@@ -526,7 +495,7 @@
   $(document).ready(function () {
     $(".button-collapse").sideNav();
     $('.parallax').parallax();
-    $('.carousel.carousel-slider').carousel({ fullWidth: true });
+    $('.modal').modal();
     $("a").on('click', function(event) {
       // Make sure this.hash has a value before overriding default behavior
       if (this.hash !== "") {
