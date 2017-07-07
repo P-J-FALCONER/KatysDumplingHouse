@@ -1,0 +1,42 @@
+#mapid {
+  height: 30em !important;
+}
+
+td {
+  padding: 0.3em !important;
+  font-size: 1.5em !important;
+}
+.card.small {
+  height: 170px !important;
+}
+p {
+  margin: 0.2em !important;
+}
+.address{
+  font-size: 1.5em !important;
+}
+@font-face {
+font-family:"Roice";
+src: url("../fonts/roice-regular.eot") /* EOT file for IE */
+}
+@font-face {
+    font-family:"Roice";
+    src: url("../fonts/roice-regular.ttf") /* TTF file for CSS3 browsers */
+}
+html {
+  font-family: 'Roice', cursive;
+}
+#about_us{
+  top: 2000px !important;
+}
+#designer{
+  font-family: 'Roboto', sans-serif !important;
+}
+  @media screen and (min-width: 993px) {
+  .brand-logo{
+    margin-left: 1.5em !important;
+  }
+}
+.left-nav{
+  margin-right: 3em !important;
+}

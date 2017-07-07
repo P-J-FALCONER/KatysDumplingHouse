@@ -17,73 +17,27 @@
     crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
     crossorigin=""></script>
-  <style type="text/css">
-    #mapid {
-      height: 30em;
-    }
-
-    td {
-      padding: 0.3em;
-      font-size: 1.5em;
-    }
-    .card.small {
-      height: 200px;
-    }
-    p {
-      margin: 0.2em;
-    }
-    .address{
-      font-size: 1.5em;
-    }
-    @font-face {
-    font-family:"Roice";
-    src: url("./fonts/roice-regular.eot") /* EOT file for IE */
-    }
-    @font-face {
-        font-family:"Roice";
-        src: url("./fonts/roice-regular.ttf") /* TTF file for CSS3 browsers */
-    }
-    html {
-      font-family: 'Roice', cursive;
-    }
-    #about_us{
-      top: 2000px;
-    }
-    #designer{
-      font-family: 'Roboto', sans-serif;
-    }
-     @media screen and (min-width: 993px) {
-      .brand-logo{
-        margin-left: 1.5em;
-      }
-    }
-    .left-nav{
-      margin-right: 3em;
-    }
-  </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper grey lighten-1">
-        <a href="#!" class="brand-logo black-text"><h4>Katy's Dumplings</h4></a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a class="waves-effect waves-light btn-large red lighten-1" href="#ordermodal"><i class="material-icons right">local_dining</i>Order Now!</a></li>
-          <li><a href="#content" id="menu_button">Menu</a></li>
-          <li><a id="about_us_button" href="#content">About Us</a></li>
-          <li class="left-nav"><a id="location_button" href="#content">Location / Hours</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li class="mobileShow"><a href="tel:630-323-9393">Call Now!</a></li>
-          <li><a href="#content">Menu</a></li>
-          <li><a id="about_us_button" href="#content">About Us</a></li>
-          <li><a class="waves-effect waves-light btn-large red lighten-1" href="#ordermodal"><i class="material-icons right">local_dining</i>Order Now!</a></li>
-          <li><a href="#location">Location / Hours</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+  <nav>
+    <div class="nav-wrapper grey lighten-1">
+      <a href="#!" class="brand-logo black-text"><h4>Katy's Dumplings</h4></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn-large red lighten-1" href="#ordermodal"><i class="material-icons right">local_dining</i>Order Now!</a></li>
+        <li><a href="#content" id="menu_button">Menu</a></li>
+        <li><a id="about_us_button" href="#content">About Us</a></li>
+        <li class="left-nav"><a id="location_button" href="#content">Location / Hours</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a class="waves-effect waves-light btn-large red lighten-1" href="#ordermodal"><i class="material-icons right">local_dining</i>Order Now!</a></li>
+        <li><a href="#content" id="menu_button">Menu</a></li>
+        <li><a id="about_us_button" href="#content">About Us</a></li>
+        <li class="left-nav"><a id="location_button" href="#content">Location / Hours</a></li>
+      </ul>
+    </div>
+  </nav>
   <div id="ordermodal" class="modal">
     <div class="modal-content">
       <h4>Online Ordering Coming in September 2017</h4>
@@ -367,7 +321,7 @@
               </div>
             </div>
             <h4 class="center-align">炒肼蟆 Stir Fried Pancake</h4>
-            <h5>禧菖轼不同口昧 Choice of Flavors</h5>
+            <h5 class="center-align">禧菖轼不同口昧 Choice of Flavors</h5>
             <div class="row">
               <div class="col l4 m6 s12 center-align">
                 <div class="card small blue-grey darken-1">
@@ -634,7 +588,7 @@
                 <div class="card small blue-grey darken-1">
                   <div class="card-content white-text">
                     <span class="card-title">Mala Dry Pot</span>
-                    <h5>Choice of pork, chicken, beef, shrimp, veggie</h5>
+                    <h6>Choice of pork, chicken, beef, shrimp, veggie</h6>
                     <span class="card-title">麻辣香跚</span>
                     <h5>$14.95</h5>
                   </div>
@@ -805,47 +759,5 @@
     </div>
   </footer>
 </body>
-<script>
-  $(document).ready(function () {
-    $(".button-collapse").sideNav();
-    $('.parallax').parallax();
-    $('.modal').modal();
-    $("#about_us").hide();
-    $("#menu").hide();
-    $('.collapsible').collapsible('open', 0);
-    $('a[href^="#content"]').click(function() {
-      var target = $(this.hash);
-      if (target.length == 0) target = $('a[name="' + this.hash.substr(1) + '"]');
-      if (target.length == 0) target = $('html');
-      $('html, body').animate({ scrollTop: target.offset().top-100 }, 1000);
-      return false;
-    });
-  })
-  $("#about_us_button").click(function(){
-    $("#menu").hide(1000);
-    $("#about_us").toggle(1000);
-
-  })
-  $("#location_button").click(function(){
-    $("#menu").hide(1000);
-    $("#about_us").hide(1000);
-
-  })
-  $("#menu_button").click(function(){
-    $("#about_us").hide(1000);
-    $("#menu").toggle(1000);
-    $('.collapsible').collapsible('open', 0);
-  })
-  var mymap = L.map('mapid').setView([41.812431, -87.974784], 16);
-
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    maxZoom: 18,
-    scrollWheelZoom:false,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoiZmFsY29uMjIiLCJhIjoiY2oxenl3bHlwMDNueDJ3cDg5b3NwOW1qNCJ9.nFAkSZ3PJuJNQtKYNt6aHQ'
-  }).addTo(mymap);
-  var marker = L.marker([41.812431, -87.974784]).addTo(mymap);
-</script>
-
+<script type="text/javascript" src="./js/scripts.js"></script>
 </html>
