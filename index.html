@@ -24,7 +24,9 @@
       padding: 0.3em;
       font-size: 1.5em;
     }
-
+    .card.small {
+      height: 200px;
+    }
     p {
       margin: 0.2em;
     }
@@ -42,11 +44,16 @@
     html {
       font-family: 'Roice', cursive;
     }
+    #about_us{
+      top: 2000px;
+    }
     #designer{
       font-family: 'Roboto', sans-serif;
     }
-    .brand-logo{
-      margin-left: 1.5em;
+     @media screen and (min-width: 993px) {
+      .brand-logo{
+        margin-left: 1.5em;
+      }
     }
     .left-nav{
       margin-right: 3em;
@@ -54,44 +61,192 @@
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-wrapper grey lighten-1">
-      <a href="#!" class="brand-logo black-text"><h4>Katy's Dumplings</h4><i class="material-icons large hide-on-med-and-up">call</i></a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="waves-effect waves-light btn-large red lighten-1" href="#ordermodal"><i class="material-icons right">local_dining</i>Order Now!</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li class="left-nav"><a href="#location">Location / Hours</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li class="mobileShow"><a href="tel:630-323-9393">Call Now!</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a class="waves-effect waves-light btn-large red lighten-1"><i class="material-icons right">local_dining</i>Order Now!</a></li>
-        <li><a href="#location">Location / Hours</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper grey lighten-1">
+        <a href="#!" class="brand-logo black-text"><h4>Katy's Dumplings</h4></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="waves-effect waves-light btn-large red lighten-1" href="#ordermodal"><i class="material-icons right">local_dining</i>Order Now!</a></li>
+          <li><a href="#content" id="menu_button">Menu</a></li>
+          <li><a id="about_us_button" href="#content">About Us</a></li>
+          <li class="left-nav"><a id="location_button" href="#content">Location / Hours</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li class="mobileShow"><a href="tel:630-323-9393">Call Now!</a></li>
+          <li><a href="#content">Menu</a></li>
+          <li><a id="about_us_button" href="#content">About Us</a></li>
+          <li><a class="waves-effect waves-light btn-large red lighten-1" href="#ordermodal"><i class="material-icons right">local_dining</i>Order Now!</a></li>
+          <li><a href="#location">Location / Hours</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
   <div id="ordermodal" class="modal">
     <div class="modal-content">
       <h4>Online Ordering Coming in September 2017</h4>
-      <p class="center-align">Until Then Please call us at <a href="tel:630-323-9393">630-323-9393</a> to order.</p>
+      <h5 class="center-align">Until then please call us at <a href="tel:630-323-9393">630-323-9393</a> to order.</h5>
     </div>
     <div class="modal-footer">
       <a href="tel:630-323-9393" class="modal-action modal-close waves-effect waves-green btn-flat">Call</a>
     </div>
   </div>
   <div class="parallax-container">
-    <div class="parallax"><img class="responsive-img" src="images/store.jpg"></div>
+    <div class="parallax"><img class="responsive-img" src="images/store.png"></div>
   </div>
-  <div class="section white">
+  <div id="content"></div>
+  <div class="section white" id="about_us">
     <div class="row">
       <ul class="collapsible popout" data-collapsible="accordion">
         <li>
-          <div class="collapsible-header">
+          <div class="collapsible-header active">
             <h4>About Us</h4>
           </div>
           <div class="collapsible-body">
             <p>What many people don't know about Katy's is that it's named after the owner's wife. Since 2007 Katy's Dumplings has handmade all of its noodles and dumplings in addition to the traditional cold dishes found in the front fridge. Its recipes are passed down from generation to generation originating from a small village in Northern China. </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="section white" id="menu">
+    <div class="row">
+      <ul class="collapsible popout" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header active">
+            <h3 class="center-align">Menu</h3>
+          </div>
+          <div class="collapsible-body">
+            <h4 class="center-align">頭檯類 Appetizers</h4>
+            <div class="row">
+              <div class="col l4 m6 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Carb Ragoon (6)</span>
+                    <span class="card-title">蟹角</span>
+                    <h5>$5.95</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col l4 m6 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Scallion Pan Cake</span>
+                    <span class="card-title">蔥油餅</span>
+                    <h5>$5.95</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col l4 m6 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Egg Roll (2)</span>
+                    <span class="card-title">春卷</span>
+                    <h5>$4.95</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col l4 m6 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Cold Cucumber w. Special Sauce</span>
+                    <span class="card-title">凉拌黄瓜</span>
+                    <h5>$5.95</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h4 class="center-align">鲷骷/水胶 Pot Stickers (8) / Boiled Dumpling (10)</h4>
+            <h5 class="center-align">蜻薯轼不同口昧 Choice of Flavors</h5>
+            <div class="row">
+              <div class="col l4 m6 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Pork w. Napa</span>
+                    <span class="card-title">豬肉白菜</span>
+                    <h5>$8.95</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col l4 m6 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Pork w. Chives</span>
+                    <span class="card-title">豬肉韭菜</span>
+                    <h5>$8.95</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col l4 m6 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Beef w. Scallions</span>
+                    <span class="card-title">牛肉大蒽</span>
+                    <h5>$8.95</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col l4 m6 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Shrimp w. Chives</span>
+                    <span class="card-title">韭菜暇仁</span>
+                    <h5>$8.95</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col l4 m6 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Juicy Steam Buns (8)</span>
+                    <span class="card-title">小籠包</span>
+                    <h5>$8.95</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col l4 m6 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Pan Fried pork Buns (6)</span>
+                    <span class="card-title">生煎包</span>
+                    <h5>$8.95</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h4 class="center-align">炒飯類 Fried Rice</h4>
+            <div class="col l12 m12 s12 center-align">
+                <div class="card small blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Choice of Chicken, Pork, Beef, Shrimp or Vegetable</span>
+                    <span class="card-title">請選擇雞, 豬, 牛, 暇或蔬菜</span>
+                    <h5>$8.95</h5>
+                  </div>
+                </div>
+              </div>
+            <div class="row">
+
+            </div>
+            <h4 class="center-align">Cold House Special Snack (Made Daily)</h4>
+            <div class="row">
+
+            </div>
+            <h4 class="center-align">Stir Fried Pancake</h4>
+            <div class="row">
+
+            </div>
+            <h4 class="center-align">Chow Mein</h4>
+            <div class="row">
+
+            </div>
+            <h4 class="center-align">Noodles Soup</h4>
+            <div class="row">
+
+            </div>
+            <h4 class="center-align">Stir fry</h4>
+            <div class="row">
+
+            </div>
           </div>
         </li>
       </ul>
@@ -162,26 +317,31 @@
     $(".button-collapse").sideNav();
     $('.parallax').parallax();
     $('.modal').modal();
-    $("a").on('click', function(event) {
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-
-        // Store hash
-        var hash = this.hash;
-
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 3000, function(){
-    
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
+    $("#about_us").hide();
+    $("#menu").hide();
+    $('.collapsible').collapsible('open', 0);
+    $('a[href^="#content"]').click(function() {
+      var target = $(this.hash);
+      if (target.length == 0) target = $('a[name="' + this.hash.substr(1) + '"]');
+      if (target.length == 0) target = $('html');
+      $('html, body').animate({ scrollTop: target.offset().top-100 }, 1000);
+      return false;
     });
+  })
+  $("#about_us_button").click(function(){
+    $("#menu").hide(1000);
+    $("#about_us").toggle(1000);
+
+  })
+  $("#location_button").click(function(){
+    $("#menu").hide(1000);
+    $("#about_us").hide(1000);
+
+  })
+  $("#menu_button").click(function(){
+    $("#about_us").hide(1000);
+    $("#menu").toggle(1000);
+    $('.collapsible').collapsible('open', 0);
   })
   var mymap = L.map('mapid').setView([41.812431, -87.974784], 16);
 
@@ -193,12 +353,6 @@
     accessToken: 'pk.eyJ1IjoiZmFsY29uMjIiLCJhIjoiY2oxenl3bHlwMDNueDJ3cDg5b3NwOW1qNCJ9.nFAkSZ3PJuJNQtKYNt6aHQ'
   }).addTo(mymap);
   var marker = L.marker([41.812431, -87.974784]).addTo(mymap);
-      //$('a').click(function(){
-        //$('html, body').animate({
-          //  scrollTop: $( $(this).attr('href') ).offset().top
-        //}, 900);
-        //return false;
-      //});
 </script>
 
 </html>
