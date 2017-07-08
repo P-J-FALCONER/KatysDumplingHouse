@@ -16,7 +16,6 @@ $(document).ready(function () {
   $("#about_us_button").click(function(){
     $("#menu").hide(1000);
     $("#about_us").toggle(1000);
-
   })
   $("#location_button").click(function(){
     $("#menu").hide(1000);
@@ -26,7 +25,20 @@ $(document).ready(function () {
   $("#menu_button").click(function(){
     $("#about_us").hide(1000);
     $("#menu").toggle(1000);
+    $('.collapsible').collapsible('open', 0);
+  })
+  $("#about_us_button_mobile").click(function(){
+    $("#menu").hide(1000);
+    $("#about_us").toggle(1000);
+  })
+  $("#location_button_mobile").click(function(){
+    $("#menu").hide(1000);
+    $("#about_us").hide(1000);
 
+  })
+  $("#menu_button_mobile").click(function(){
+    $("#about_us").hide(1000);
+    $("#menu").toggle(1000);
     $('.collapsible').collapsible('open', 0);
   })
   var mymap = L.map('mapid').setView([41.812431, -87.974784], 16);
