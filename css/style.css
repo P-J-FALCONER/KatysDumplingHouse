@@ -29,6 +29,10 @@ p {
     font-family:"Bebas_Neue";
     src: url("../fonts/BebasNeue Book.ttf") /* TTF file for CSS3 browsers */
 }
+@font-face {
+    font-family:"Bebas_Neue";
+    src: url("../fonts/BebasNeue Book.otf") /* TTF file for CSS3 browsers */
+}
 html {
   font-family: 'Roice', cursive;
 }
